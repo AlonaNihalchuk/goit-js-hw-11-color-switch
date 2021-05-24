@@ -40,8 +40,3 @@ function onButtonStopClick(e) {
     buttonStartRef.addEventListener("click", onButtonStartClick);
   }
 }
-
-// if (!intervalId === null) {
-//   //   buttonStopRef.setAttribute("disabled");
-//   buttonStartRef.removeEventListener("click", onButtonStartClick);
-// }
