@@ -19,8 +19,10 @@ buttonStartRef.addEventListener("click", onButtonStartClick);
 buttonStopRef.addEventListener("click", onButtonStopClick);
 
 let intervalId = null;
+// добавляет disabled
 function onButtonStartClick(e) {
   if (e.target.dataset.action === "start") {
+    buttonStartRef.disabled = true;
     buttonStartRef.removeEventListener("click", onButtonStartClick);
     console.log("remove");
   }
@@ -34,9 +36,11 @@ function onButtonStartClick(e) {
   intervalId = setInterval(changeColorOfBody, 1000);
 }
 
+// снимает disabled
 function onButtonStopClick(e) {
   clearInterval(intervalId);
   if (e.target.dataset.action === "stop") {
+    buttonStartRef.disabled = false;
     buttonStartRef.addEventListener("click", onButtonStartClick);
   }
 }
